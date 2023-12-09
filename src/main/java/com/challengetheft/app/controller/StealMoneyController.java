@@ -13,19 +13,35 @@ import com.challengetheft.app.request.MoneyRequest;
 import com.challengetheft.app.response.MoneyStolenResponse;
 import com.challengetheft.app.service.StealMoneyService;
 
+/**
+ * Controller for StealMoney Service
+ */
 @RestController
 @RequestMapping("/")
 public class StealMoneyController {
 	
+	/**
+	 * StealMoney Service
+	 */
 	@Autowired
 	private StealMoneyService stealService;
 	
+	/**
+	 * End-point to test the API
+	 * @return 200 and Hello world
+	 */
 	@GetMapping
 	public ResponseEntity<?> helloWorld(){
 		
 		return ResponseEntity.status(HttpStatus.OK).body("Hello world");
 	}
 	
+	/**
+	 * End-point to computes the maximum sum in an array of non-adjacent numbers
+	 * @param houseMoney The array of numbers representing the money of each house
+	 * @return 200 and the maximum amount of money stolen
+	 * @return 404 if an error occurs
+	 */
 	@PostMapping("/rob")
 	public ResponseEntity<?> rob(@RequestBody MoneyRequest houseMoney){
 		

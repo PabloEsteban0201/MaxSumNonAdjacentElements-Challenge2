@@ -2,6 +2,9 @@ package com.challengetheft.app.service;
 
 import org.springframework.stereotype.Service;
 
+/**
+ * Service to computes the maximum sum in an array of non-adjacent numbers
+ */
 @Service
 public class StealMoneyServiceImpl implements StealMoneyService {
 
